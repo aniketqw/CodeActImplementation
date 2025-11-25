@@ -14,8 +14,8 @@ def prepare_mlx_data():
     print("Preparing Data for MLX Training")
     print("="*60)
 
-    # Read the original training data
-    input_file = "data/codeact_feedback_train.jsonl"
+    # Read the original training data (100 examples)
+    input_file = "data/codeact_feedback_train_100.jsonl"
     output_dir = "data/mlx_train"
 
     os.makedirs(output_dir, exist_ok=True)
@@ -76,8 +76,8 @@ def finetune_with_mlx():
     print("Training Configuration")
     print("="*60)
 
-    model_name = "Qwen/Qwen2-0.5B"
-    output_dir = "./models/codeact-mlx-qwen2-0.5b"
+    model_name = "Qwen/Qwen2.5-3B"
+    output_dir = "./models/codeact-mlx-qwen2.5-3b"
 
     print(f"✓ Base model: {model_name}")
     print(f"✓ Output dir: {output_dir}")
@@ -88,15 +88,16 @@ def finetune_with_mlx():
     print("="*60 + "\n")
 
     # Use mlx_lm lora to fine-tune
+    # Increased iters for 100 examples, more layers for 3B model
     cmd = [
         "python", "-m", "mlx_lm", "lora",
         "--model", model_name,
         "--train",
         "--data", data_dir,
         "--adapter-path", output_dir,
-        "--iters", "100",
+        "--iters", "500",
         "--batch-size", "1",
-        "--num-layers", "8",
+        "--num-layers", "16",
         "--learning-rate", "1e-5",
     ]
 

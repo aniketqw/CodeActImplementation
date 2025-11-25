@@ -7,7 +7,7 @@ import os
 from io import StringIO
 
 class CodeActDemo:
-    def __init__(self, model_name="Qwen/Qwen2-0.5B", adapter_path="./models/codeact-mlx-qwen2-0.5b"):
+    def __init__(self, model_name="Qwen/Qwen2.5-3B", adapter_path="./models/codeact-mlx-qwen2.5-3b"):
         print("Loading MLX model...")
 
         from mlx_lm import load, generate

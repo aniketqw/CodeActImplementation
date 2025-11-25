@@ -1,0 +1,104 @@
+Loading pretrained model
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files:  11%|█         | 1/9 [00:02<00:18,  2.29s/it]Fetching 9 files:  33%|███▎      | 3/9 [00:02<00:04,  1.40it/s]Fetching 9 files:  44%|████▍     | 4/9 [02:37<04:29, 53.89s/it]Fetching 9 files: 100%|██████████| 9/9 [02:37<00:00, 17.45s/it]
+Loading datasets
+Training
+Trainable parameters: 0.216% (6.652M/3085.939M)
+Starting training..., iters: 500
+Calculating loss...:   0%|          | 0/10 [00:00<?, ?it/s]Calculating loss...:  10%|█         | 1/10 [00:01<00:16,  1.79s/it]Calculating loss...:  20%|██        | 2/10 [00:02<00:08,  1.00s/it]Calculating loss...:  30%|███       | 3/10 [00:02<00:05,  1.23it/s]Calculating loss...:  40%|████      | 4/10 [00:03<00:04,  1.50it/s]Calculating loss...:  50%|█████     | 5/10 [00:03<00:02,  1.70it/s]Calculating loss...:  60%|██████    | 6/10 [00:04<00:02,  1.84it/s]Calculating loss...:  70%|███████   | 7/10 [00:04<00:01,  1.96it/s]Calculating loss...:  80%|████████  | 8/10 [00:05<00:00,  2.06it/s]Calculating loss...:  90%|█████████ | 9/10 [00:05<00:00,  2.11it/s]Calculating loss...: 100%|██████████| 10/10 [00:05<00:00,  2.15it/s]Calculating loss...: 100%|██████████| 10/10 [00:05<00:00,  1.68it/s]
+Iter 1: Val loss 3.099, Val took 5.967s
+Iter 10: Train loss 1.715, Learning Rate 1.000e-05, It/sec 1.111, Tokens/sec 212.444, Trained Tokens 1912, Peak mem 7.527 GB
+Iter 20: Train loss 0.771, Learning Rate 1.000e-05, It/sec 1.206, Tokens/sec 227.433, Trained Tokens 3798, Peak mem 7.527 GB
+Iter 30: Train loss 0.624, Learning Rate 1.000e-05, It/sec 1.236, Tokens/sec 234.163, Trained Tokens 5692, Peak mem 7.527 GB
+Iter 40: Train loss 0.643, Learning Rate 1.000e-05, It/sec 1.302, Tokens/sec 242.497, Trained Tokens 7555, Peak mem 7.527 GB
+Iter 50: Train loss 0.612, Learning Rate 1.000e-05, It/sec 1.211, Tokens/sec 231.784, Trained Tokens 9469, Peak mem 7.527 GB
+Iter 60: Train loss 0.591, Learning Rate 1.000e-05, It/sec 1.274, Tokens/sec 237.806, Trained Tokens 11336, Peak mem 7.527 GB
+Iter 70: Train loss 0.663, Learning Rate 1.000e-05, It/sec 1.327, Tokens/sec 237.770, Trained Tokens 13128, Peak mem 7.527 GB
+Iter 80: Train loss 0.605, Learning Rate 1.000e-05, It/sec 1.214, Tokens/sec 224.029, Trained Tokens 14973, Peak mem 7.527 GB
+Iter 90: Train loss 0.581, Learning Rate 1.000e-05, It/sec 1.114, Tokens/sec 222.187, Trained Tokens 16968, Peak mem 7.548 GB
+Iter 100: Train loss 0.523, Learning Rate 1.000e-05, It/sec 1.179, Tokens/sec 218.571, Trained Tokens 18822, Peak mem 7.548 GB
+Iter 100: Saved adapter weights to models/codeact-mlx-qwen2.5-3b/adapters.safetensors and models/codeact-mlx-qwen2.5-3b/0000100_adapters.safetensors.
+Iter 110: Train loss 0.499, Learning Rate 1.000e-05, It/sec 1.182, Tokens/sec 217.557, Trained Tokens 20663, Peak mem 7.548 GB
+Iter 120: Train loss 0.505, Learning Rate 1.000e-05, It/sec 1.127, Tokens/sec 211.247, Trained Tokens 22537, Peak mem 7.555 GB
+Iter 130: Train loss 0.506, Learning Rate 1.000e-05, It/sec 1.020, Tokens/sec 197.191, Trained Tokens 24470, Peak mem 7.555 GB
+Iter 140: Train loss 0.491, Learning Rate 1.000e-05, It/sec 0.829, Tokens/sec 159.612, Trained Tokens 26395, Peak mem 7.555 GB
+Iter 150: Train loss 0.495, Learning Rate 1.000e-05, It/sec 0.696, Tokens/sec 129.740, Trained Tokens 28260, Peak mem 7.555 GB
+Iter 160: Train loss 0.502, Learning Rate 1.000e-05, It/sec 0.764, Tokens/sec 142.968, Trained Tokens 30131, Peak mem 7.555 GB
+Iter 170: Train loss 0.506, Learning Rate 1.000e-05, It/sec 0.836, Tokens/sec 156.915, Trained Tokens 32007, Peak mem 7.584 GB
+Iter 180: Train loss 0.488, Learning Rate 1.000e-05, It/sec 0.862, Tokens/sec 166.242, Trained Tokens 33936, Peak mem 7.584 GB
+Iter 190: Train loss 0.449, Learning Rate 1.000e-05, It/sec 0.777, Tokens/sec 141.800, Trained Tokens 35762, Peak mem 7.584 GB
+Calculating loss...:   0%|          | 0/10 [00:00<?, ?it/s]Calculating loss...:  10%|█         | 1/10 [00:01<00:10,  1.13s/it]Calculating loss...:  20%|██        | 2/10 [00:02<00:10,  1.35s/it]Calculating loss...:  30%|███       | 3/10 [00:04<00:09,  1.36s/it]Calculating loss...:  40%|████      | 4/10 [00:05<00:08,  1.37s/it]Calculating loss...:  50%|█████     | 5/10 [00:06<00:06,  1.25s/it]Calculating loss...:  60%|██████    | 6/10 [00:08<00:05,  1.37s/it]Calculating loss...:  70%|███████   | 7/10 [00:09<00:04,  1.38s/it]Calculating loss...:  80%|████████  | 8/10 [00:10<00:02,  1.28s/it]Calculating loss...:  90%|█████████ | 9/10 [00:11<00:01,  1.31s/it]Calculating loss...: 100%|██████████| 10/10 [00:12<00:00,  1.23s/it]Calculating loss...: 100%|██████████| 10/10 [00:12<00:00,  1.30s/it]
+Iter 200: Val loss 0.743, Val took 13.236s
+Iter 200: Train loss 0.441, Learning Rate 1.000e-05, It/sec 0.481, Tokens/sec 88.123, Trained Tokens 37595, Peak mem 7.584 GB
+Iter 200: Saved adapter weights to models/codeact-mlx-qwen2.5-3b/adapters.safetensors and models/codeact-mlx-qwen2.5-3b/0000200_adapters.safetensors.
+Iter 210: Train loss 0.418, Learning Rate 1.000e-05, It/sec 0.510, Tokens/sec 107.135, Trained Tokens 39697, Peak mem 7.584 GB
+Iter 220: Train loss 0.451, Learning Rate 1.000e-05, It/sec 0.699, Tokens/sec 127.653, Trained Tokens 41522, Peak mem 7.584 GB
+Iter 230: Train loss 0.443, Learning Rate 1.000e-05, It/sec 0.713, Tokens/sec 135.674, Trained Tokens 43424, Peak mem 7.584 GB
+Iter 240: Train loss 0.433, Learning Rate 1.000e-05, It/sec 0.773, Tokens/sec 151.266, Trained Tokens 45380, Peak mem 7.584 GB
+Iter 250: Train loss 0.463, Learning Rate 1.000e-05, It/sec 0.829, Tokens/sec 145.687, Trained Tokens 47137, Peak mem 7.584 GB
+Iter 260: Train loss 0.459, Learning Rate 1.000e-05, It/sec 0.763, Tokens/sec 135.792, Trained Tokens 48916, Peak mem 7.584 GB
+Iter 270: Train loss 0.422, Learning Rate 1.000e-05, It/sec 0.558, Tokens/sec 110.893, Trained Tokens 50904, Peak mem 7.673 GB
+Iter 280: Train loss 0.406, Learning Rate 1.000e-05, It/sec 0.645, Tokens/sec 122.731, Trained Tokens 52806, Peak mem 7.673 GB
+Iter 290: Train loss 0.409, Learning Rate 1.000e-05, It/sec 0.667, Tokens/sec 130.176, Trained Tokens 54757, Peak mem 7.673 GB
+Iter 300: Train loss 0.428, Learning Rate 1.000e-05, It/sec 0.686, Tokens/sec 124.337, Trained Tokens 56570, Peak mem 7.673 GB
+Iter 300: Saved adapter weights to models/codeact-mlx-qwen2.5-3b/adapters.safetensors and models/codeact-mlx-qwen2.5-3b/0000300_adapters.safetensors.
+Iter 310: Train loss 0.437, Learning Rate 1.000e-05, It/sec 0.726, Tokens/sec 131.757, Trained Tokens 58385, Peak mem 7.673 GB
+Iter 320: Train loss 0.406, Learning Rate 1.000e-05, It/sec 0.683, Tokens/sec 132.693, Trained Tokens 60327, Peak mem 7.673 GB
+Iter 330: Train loss 0.415, Learning Rate 1.000e-05, It/sec 0.597, Tokens/sec 114.877, Trained Tokens 62250, Peak mem 7.673 GB
+Iter 340: Train loss 0.423, Learning Rate 1.000e-05, It/sec 0.665, Tokens/sec 124.974, Trained Tokens 64128, Peak mem 7.673 GB
+Iter 350: Train loss 0.419, Learning Rate 1.000e-05, It/sec 0.645, Tokens/sec 120.912, Trained Tokens 66004, Peak mem 7.702 GB
+Iter 360: Train loss 0.425, Learning Rate 1.000e-05, It/sec 0.636, Tokens/sec 118.757, Trained Tokens 67872, Peak mem 7.702 GB
+Iter 370: Train loss 0.405, Learning Rate 1.000e-05, It/sec 0.685, Tokens/sec 131.299, Trained Tokens 69789, Peak mem 7.702 GB
+Iter 380: Train loss 0.421, Learning Rate 1.000e-05, It/sec 0.677, Tokens/sec 126.745, Trained Tokens 71661, Peak mem 7.702 GB
+Iter 390: Train loss 0.410, Learning Rate 1.000e-05, It/sec 0.719, Tokens/sec 134.714, Trained Tokens 73534, Peak mem 7.702 GB
+Calculating loss...:   0%|          | 0/10 [00:00<?, ?it/s]Calculating loss...:  10%|█         | 1/10 [00:00<00:06,  1.31it/s]Calculating loss...:  20%|██        | 2/10 [00:01<00:05,  1.44it/s]Calculating loss...:  30%|███       | 3/10 [00:02<00:04,  1.43it/s]Calculating loss...:  40%|████      | 4/10 [00:02<00:04,  1.32it/s]Calculating loss...:  50%|█████     | 5/10 [00:03<00:03,  1.34it/s]Calculating loss...:  60%|██████    | 6/10 [00:04<00:03,  1.29it/s]Calculating loss...:  70%|███████   | 7/10 [00:05<00:02,  1.28it/s]Calculating loss...:  80%|████████  | 8/10 [00:05<00:01,  1.35it/s]Calculating loss...:  90%|█████████ | 9/10 [00:06<00:00,  1.26it/s]Calculating loss...: 100%|██████████| 10/10 [00:07<00:00,  1.19it/s]Calculating loss...: 100%|██████████| 10/10 [00:07<00:00,  1.28it/s]
+Iter 400: Val loss 0.774, Val took 7.910s
+Iter 400: Train loss 0.405, Learning Rate 1.000e-05, It/sec 0.647, Tokens/sec 123.310, Trained Tokens 75439, Peak mem 7.702 GB
+Iter 400: Saved adapter weights to models/codeact-mlx-qwen2.5-3b/adapters.safetensors and models/codeact-mlx-qwen2.5-3b/0000400_adapters.safetensors.
+Iter 410: Train loss 0.415, Learning Rate 1.000e-05, It/sec 0.809, Tokens/sec 152.466, Trained Tokens 77324, Peak mem 7.702 GB
+Iter 420: Train loss 0.394, Learning Rate 1.000e-05, It/sec 0.706, Tokens/sec 139.572, Trained Tokens 79300, Peak mem 7.702 GB
+Iter 430: Train loss 0.402, Learning Rate 1.000e-05, It/sec 0.698, Tokens/sec 135.474, Trained Tokens 81240, Peak mem 7.702 GB
+Iter 440: Train loss 0.431, Learning Rate 1.000e-05, It/sec 0.817, Tokens/sec 147.308, Trained Tokens 83042, Peak mem 7.702 GB
+Iter 450: Train loss 0.427, Learning Rate 1.000e-05, It/sec 0.732, Tokens/sec 131.564, Trained Tokens 84840, Peak mem 7.702 GB
+Iter 460: Train loss 0.406, Learning Rate 1.000e-05, It/sec 0.776, Tokens/sec 146.502, Trained Tokens 86728, Peak mem 7.702 GB
+Iter 470: Train loss 0.418, Learning Rate 1.000e-05, It/sec 0.871, Tokens/sec 156.733, Trained Tokens 88528, Peak mem 7.702 GB
+Iter 480: Train loss 0.403, Learning Rate 1.000e-05, It/sec 0.750, Tokens/sec 143.804, Trained Tokens 90445, Peak mem 7.702 GB
+Iter 490: Train loss 0.406, Learning Rate 1.000e-05, It/sec 0.806, Tokens/sec 153.287, Trained Tokens 92348, Peak mem 7.702 GB
+Calculating loss...:   0%|          | 0/10 [00:00<?, ?it/s]Calculating loss...:  10%|█         | 1/10 [00:00<00:06,  1.49it/s]Calculating loss...:  20%|██        | 2/10 [00:01<00:05,  1.49it/s]Calculating loss...:  30%|███       | 3/10 [00:02<00:04,  1.48it/s]Calculating loss...:  40%|████      | 4/10 [00:02<00:04,  1.37it/s]Calculating loss...:  50%|█████     | 5/10 [00:03<00:03,  1.39it/s]Calculating loss...:  60%|██████    | 6/10 [00:04<00:03,  1.32it/s]Calculating loss...:  70%|███████   | 7/10 [00:04<00:02,  1.41it/s]Calculating loss...:  80%|████████  | 8/10 [00:05<00:01,  1.45it/s]Calculating loss...:  90%|█████████ | 9/10 [00:06<00:00,  1.46it/s]Calculating loss...: 100%|██████████| 10/10 [00:07<00:00,  1.34it/s]Calculating loss...: 100%|██████████| 10/10 [00:07<00:00,  1.39it/s]
+Iter 500: Val loss 0.808, Val took 7.234s
+Iter 500: Train loss 0.392, Learning Rate 1.000e-05, It/sec 0.780, Tokens/sec 151.418, Trained Tokens 94289, Peak mem 7.702 GB
+Iter 500: Saved adapter weights to models/codeact-mlx-qwen2.5-3b/adapters.safetensors and models/codeact-mlx-qwen2.5-3b/0000500_adapters.safetensors.
+Saved final weights to models/codeact-mlx-qwen2.5-3b/adapters.safetensors.
+============================================================
+Fine-tuning with MLX on Apple Silicon
+============================================================
+✓ MLX version: 0.30.0
+✓ Using Apple Metal GPU acceleration
+
+============================================================
+Preparing Data for MLX Training
+============================================================
+✓ Training examples: 90
+✓ Validation examples: 10
+✓ Data saved to: data/mlx_train/
+
+============================================================
+Training Configuration
+============================================================
+✓ Base model: Qwen/Qwen2.5-3B
+✓ Output dir: ./models/codeact-mlx-qwen2.5-3b
+✓ Method: LoRA (Low-Rank Adaptation)
+
+============================================================
+Starting MLX Training
+============================================================
+
+Running: python -m mlx_lm lora --model Qwen/Qwen2.5-3B --train --data data/mlx_train --adapter-path ./models/codeact-mlx-qwen2.5-3b --iters 500 --batch-size 1 --num-layers 16 --learning-rate 1e-5
+
+
+============================================================
+Training Complete!
+============================================================
+✓ LoRA adapter saved to: ./models/codeact-mlx-qwen2.5-3b
+
+To use the fine-tuned model:
+  python -m mlx_lm.generate --model Qwen/Qwen2.5-3B --adapter-path ./models/codeact-mlx-qwen2.5-3b --prompt "Your prompt here"

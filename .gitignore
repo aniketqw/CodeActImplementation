@@ -1,9 +1,16 @@
 # Claude Code
 .claude/
 
-# Virtual environments
-codeact-demo/
-codeact-imporvemnt/
+# Virtual environments (conda envs inside project folders)
+codeact-demo/codeact/
+codeact-imporvemnt/codeactImprovement/
+
+# Model files (too large for GitHub)
+models/
+*.safetensors
+*.bin
+*.pt
+*.pth
 venv/
 env/
 .venv/

@@ -5,12 +5,6 @@
 codeact-demo/codeact/
 codeact-imporvemnt/codeactImprovement/
 
-# Model files (too large for GitHub)
-models/
-*.safetensors
-*.bin
-*.pt
-*.pth
 venv/
 env/
 .venv/

@@ -1,19 +1,18 @@
+
 # CodeAct Fine-tuning Demo
 
-**Fine-tune Qwen2-0.5B to generate and execute Python code with reasoning.**
-
-Interactive demo with conversation memory, execution feedback loop, and real-time code execution.
+Fine-tune Qwen2-0.5B to generate and execute Python code with reasoning. Includes conversation memory, execution feedback loop, and real-time code execution.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### Use Pre-trained Model (Instant)
+**Use the pre-trained model:**
 ```bash
 ./interactive.sh
 ```
 
-### Train Your Own Model (~10 minutes)
+**Train your own (takes about 10 minutes):**
 ```bash
 source activate codeact
 ./run_all.sh
@@ -21,30 +20,30 @@ source activate codeact
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 codeact-demo/
 ├── 1_create_dataset.py          # Creates training dataset (8 examples)
-├── 2_finetune_model.py           # Fine-tunes Qwen2-0.5B (3 epochs)
-├── 3_test_model.py               # Tests model with code execution
-├── 4_interactive_demo.py         # Interactive chat with memory & feedback
-├── run_all.sh                    # Runs full training pipeline (1→2→3)
-├── interactive.sh                # Launches interactive demo
-├── README.md                     # This file
-├── data/                         # Training dataset (auto-created)
+├── 2_finetune_model.py          # Fine-tunes Qwen2-0.5B (3 epochs)
+├── 3_test_model.py              # Tests model with code execution
+├── 4_interactive_demo.py        # Interactive chat with memory & feedback
+├── run_all.sh                   # Runs full training pipeline (1→2→3)
+├── interactive.sh               # Launches interactive demo
+├── README.md
+├── data/
 │   └── codeact_train.jsonl      # 8 CodeAct examples
-├── models/                       # Trained models
+├── models/
 │   └── codeact-qwen2-0.5b-final/  # Fine-tuned model (1.8GB)
-└── codeact/                      # Conda environment
+└── codeact/                     # Conda environment
 ```
 
 ---
 
-## ✨ Features
+## What It Does
 
-### 1. Code Generation with Reasoning
-Model generates responses in CodeAct format:
+### Code Generation with Reasoning
+The model generates responses in CodeAct format:
 ```xml
 <thought>reasoning process</thought>
 <execute>
@@ -52,26 +51,26 @@ python code here
 </execute>
 ```
 
-### 2. Real Code Execution
+### Real Code Execution
 - Extracts Python code from `<execute>` tags
-- Executes using `exec()`
+- Runs it using `exec()`
 - Captures output and errors
 - Shows actual results
 
-### 3. Conversation Memory
+### Conversation Memory
 - Remembers all questions and answers
 - Tracks code generated and execution results
 - Maintains full conversation context
 
-### 4. Execution Feedback Loop
+### Execution Feedback Loop
 When you mark output as wrong (`n`):
 - System saves execution result
 - Next prompt includes: `"Previous output: X [USER MARKED AS INCORRECT]"`
-- Model can learn from mistakes and try again
+- Model can retry based on feedback
 
 ---
 
-## 🎮 Interactive Demo Commands
+## Interactive Demo Commands
 
 | Command | Action |
 |---------|--------|
@@ -85,66 +84,62 @@ When you mark output as wrong (`n`):
 
 ---
 
-## 📖 Usage Examples
+## Usage Examples
 
-### Example 1: Correct Answer
+### Correct Answer
 ```
 You: Calculate 5+5
 
-💭 Thought: I'll add 5 and 5.
+Thought: I'll add 5 and 5.
 
-💻 Generated Code:
+Generated Code:
 ------------------------------------------------------------
 result = 5 + 5
 print(f"Result: {result}")
 ------------------------------------------------------------
 
-⚙️  Executing code...
+Executing code...
 
-✅ Output:
+Output:
 Result: 10
 
 Is this correct? (y/n/skip): y
-
-✨ Great! The model solved it correctly!
 ```
 
-### Example 2: Wrong Answer with Feedback
+### Wrong Answer with Feedback
 ```
 You: give me first 10 prime numbers
 
-💭 Thought: I need to find prime numbers.
+Thought: I need to find prime numbers.
 
-💻 Generated Code:
+Generated Code:
 ------------------------------------------------------------
 primes = [n for n in range(10) if is_prime(n)]
 ------------------------------------------------------------
 
-✅ Output:
+Output:
 [2, 3, 5, 7]
 
 Is this correct? (y/n/skip): n
 
-💡 The code executed but produced WRONG results.
-   The next response will try to fix it based on this execution!
+The code executed but produced wrong results.
+The next response will try to fix it based on this execution.
 
 ============================================================
 
 You: I want FIRST 10 primes, not primes till 10
 
-🤖 Model now receives:
+Model now receives:
    - Previous execution: [2, 3, 5, 7] [USER MARKED AS INCORRECT]
    - Your clarification
    - Full conversation history
-
-   It can generate better code based on this feedback!
 ```
 
 ---
 
-## 🔧 Training Pipeline
+## Training Pipeline
 
-### Full Pipeline (Automatic)
+### Full Pipeline
 ```bash
 source activate codeact
 ./run_all.sh
@@ -161,33 +156,26 @@ This runs:
 ```bash
 python 1_create_dataset.py
 ```
-- Creates 8 CodeAct training examples
-- Saves to `data/codeact_train.jsonl`
-- Examples include: sum, primes, average, reverse, palindrome, factorial, sort, max
+Creates 8 CodeAct training examples and saves to `data/codeact_train.jsonl`. Examples include: sum, primes, average, reverse, palindrome, factorial, sort, max.
 
 **Step 2: Fine-tune Model**
 ```bash
 python 2_finetune_model.py
 ```
-- Downloads Qwen2-0.5B from HuggingFace
-- Fine-tunes for 3 epochs
-- Saves to `models/codeact-qwen2-0.5b-final/`
-- Takes ~10 minutes on CPU
+Downloads Qwen2-0.5B from HuggingFace, fine-tunes for 3 epochs, and saves to `models/codeact-qwen2-0.5b-final/`. Takes about 10 minutes on CPU.
 
 **Step 3: Test Model**
 ```bash
 python 3_test_model.py
 ```
-- Runs 5 test cases
-- Executes generated code
-- Shows thought process, code, and results
+Runs 5 test cases, executes generated code, and shows thought process, code, and results.
 
 ---
 
-## 💡 How It Works
+## How It Works
 
 ### CodeAct Format
-The model is trained to generate responses with two components:
+The model generates responses with two components:
 
 1. **`<thought>`** - Reasoning process
    ```xml
@@ -220,12 +208,12 @@ Question → Generate Code → Execute → Show Results → Get Feedback
 
 ---
 
-## 🛠️ Technical Details
+## Technical Details
 
 ### Model
 - **Base:** Qwen/Qwen2-0.5B (494M parameters)
 - **Training:** 8 examples, 3 epochs
-- **Loss:** 2.30 → 0.08 (good convergence)
+- **Loss:** 2.30 → 0.08
 - **Format:** CodeAct pattern (`<thought>` + `<execute>`)
 
 ### Environment
@@ -243,11 +231,11 @@ accelerate
 numpy<2
 ```
 
-All pre-installed in `codeact` conda environment.
+All pre-installed in the `codeact` conda environment.
 
 ---
 
-## 🎯 Training Dataset
+## Training Dataset
 
 The dataset contains 8 examples covering:
 - Sum of numbers
@@ -259,14 +247,11 @@ The dataset contains 8 examples covering:
 - List sorting
 - Finding maximum value
 
-Each example shows:
-- System prompt (defines CodeAct format)
-- User question
-- Assistant response with `<thought>` and `<execute>` tags
+Each example shows a system prompt (defines CodeAct format), user question, and assistant response with `<thought>` and `<execute>` tags.
 
 ---
 
-## 📊 Performance
+## Performance
 
 **Training Results:**
 - Initial loss: 2.30
@@ -275,14 +260,11 @@ Each example shows:
 - Model size: 1.8GB
 
 **Test Results:**
-All 5 test cases successfully:
-- Generate proper `<thought>` and `<execute>` tags
-- Execute code without errors
-- Produce correct outputs
+All 5 test cases successfully generate proper tags, execute code without errors, and produce correct outputs.
 
 ---
 
-## 🚨 Important Notes
+## Notes
 
 ### Warnings Suppressed
 The code suppresses these warnings:
@@ -295,27 +277,19 @@ The code suppresses these warnings:
 - Captures stdout/stderr safely
 - Handles execution errors gracefully
 
-### Model Limitations
+### Limitations
 - Small model (0.5B) - may generate incorrect logic
 - Limited training data (8 examples)
 - CPU inference is slow (5-30 sec)
 - May need multiple attempts for complex tasks
 
-### Improvements from Feedback
-The feedback loop helps the model:
-- See what output was wrong
-- Understand user clarifications
-- Try alternative approaches
-- Learn from execution results
-
 ---
 
-## 🔄 Retraining
+## Retraining
 
 To retrain the model:
 
-1. **Modify dataset:**
-   Edit `1_create_dataset.py` to add more examples
+1. **Modify dataset:** Edit `1_create_dataset.py` to add more examples
 
 2. **Retrain:**
    ```bash
@@ -332,76 +306,35 @@ The model will overwrite `models/codeact-qwen2-0.5b-final/`.
 
 ---
 
-## 📝 Tips & Tricks
+## Tips
 
-1. **Model gives wrong answer?**
-   - Mark as `n` and clarify what you want
-   - Next attempt includes your feedback
-
-2. **Want to start fresh?**
-   - Type `reset` to clear conversation history
-
-3. **Code execution fails?**
-   - Check if code needs imports (model may forget)
-   - Simplify your question
-
-4. **Improve results?**
-   - Add more training examples in step 1
-   - Retrain with `./run_all.sh`
-
-5. **Speed up inference?**
-   - Use GPU if available (automatically detected)
-   - Reduce `max_new_tokens` in demo script
+- **Wrong answer?** Mark as `n` and clarify what you want. The next attempt includes your feedback.
+- **Start fresh?** Type `reset` to clear conversation history.
+- **Code execution fails?** Check if code needs imports (model may forget). Simplify your question.
+- **Want better results?** Add more training examples in step 1 and retrain with `./run_all.sh`.
+- **Speed up inference?** Use GPU if available (automatically detected) or reduce `max_new_tokens` in demo script.
 
 ---
 
-## 🎓 Learning Resources
+## Ideas for Improvement
 
-**CodeAct Pattern:**
-- Combines reasoning (`<thought>`) with action (`<execute>`)
-- Allows verification through execution
-- Catches logical errors through feedback
-
-**Fine-tuning:**
-- Small dataset (8 examples) is enough for simple tasks
-- More epochs may overfit on small datasets
-- Loss should decrease steadily
-
-**Execution Feedback:**
-- Helps model learn from mistakes
-- Provides ground truth through actual execution
-- Creates interactive learning loop
+- Add more diverse training examples
+- Increase training epochs (3→5)
+- Use larger base model (Qwen2-1.5B)
+- Add validation dataset
+- Implement temperature tuning
+- Add code analysis before execution
 
 ---
 
-## 🤝 Contributing Ideas
+## License
 
-Want to improve the model? Try:
-1. Add more diverse training examples
-2. Increase training epochs (3→5)
-3. Use larger base model (Qwen2-1.5B)
-4. Add validation dataset
-5. Implement temperature tuning
-6. Add code analysis before execution
+Demo project for educational purposes. Base model (Qwen2-0.5B) follows Qwen license. Demo code can be used freely.
 
 ---
 
-## 📄 License
-
-This is a demo project for educational purposes.
-- Base model (Qwen2-0.5B) follows Qwen license
-- Demo code can be used freely
-
----
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Qwen Team** - Base model
 - **HuggingFace** - Transformers library
 - **CodeAct** - Inspiration for the pattern
-
----
-
-**Made with ❤️ for learning AI code generation**
-
-Enjoy experimenting with your CodeAct model! 🚀
